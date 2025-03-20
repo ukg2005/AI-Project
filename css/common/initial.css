@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito", "Roboto", sans-serif;
+    height: 100vh;
+    background-color: azure;
+}
+
+:root {
+    /* COLORS */
+    --FONT-COLOR: azure;
+    --BUTTON-BGCOLOR: #9665e0;
+
+    /* MISC */
+    --FSIZE: 1.4rem;
+    --BORDER-RADIUS: 20px;
+}
+
+.logo {
+    padding-top: 12px;
+    width: 20vw;
+    max-width: 350px;
+    height: auto;
+}
+.type-container {
+    color: var(--FONT-COLOR);
+    margin: 1.5rem;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    font-size: var(--FSIZE);
+    position: absolute;
+    top: auto;
+    right: auto;
+    display: flex;
+    justify-content: center;
+    top: 10px;
+    right: 10px;
+    gap: 15px;
+}
+
+.teacher,
+.student {
+    padding: 10px 20px;
+    border-radius: var(--BORDER-RADIUS);
+    background: var(--BUTTON-BGCOLOR);
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+}
+
+.teacher:hover,
+.student:hover {
+    background: linear-gradient(to right, #4776E6, #8E54E9);
+    transform: scale(1.05);
+
+}
+
+.teacher:active,
+.student:active {
+    transform: scale(0.95);
+}

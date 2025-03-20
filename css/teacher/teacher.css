@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: aliceblue;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease;
+}
+
+:root {
+    /* COLORS - Light Mode (default) */
+    --MAIN-HEADING-BG: linear-gradient(to right, #4776E6, #8E54E9);
+    --SIDEBAR-BORDER: #e0e0e0;
+    --CLASSROOM-BGCOLOR: #f8f9fa;
+    --CREATE-BGCOLOR: #9c6ce3;
+    --CLASSROOM-FCOLOR: #212529;
+    --STUDENT-COUNT-COLOR: #495057;
+    --CONTENT-FCOLOR: #343a40;
+    --CONTENT-BGCOLOR: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    --ACTIVE-CLASS-BGCOLOR: #dce4ff;
+    --TITLE-CONTAINER-BGCOLOR: linear-gradient(90deg, #f5f7fa, #c3cfe2);
+    
+    /* MISC */
+    --PADDING: 20px;
+    --CLASSROOM-FSIZE: 1.5rem;
+    --STUDENT-COUNT-FSIZE: 1.1rem;
+    --BOX-SHADOW: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Class - Will be toggled with JavaScript */
+.dark-theme {
+    --MAIN-HEADING-BG: linear-gradient(to right, #0f2027, #203a43);
+    --SIDEBAR-BORDER: #2d3748;
+    --CLASSROOM-BGCOLOR: #1a202c;
+    --CREATE-BGCOLOR: #4a5568;
+    --CLASSROOM-FCOLOR: #e2e8f0;
+    --STUDENT-COUNT-COLOR: #a0aec0;
+    --CONTENT-BGCOLOR: #2d3748;
+    --CONTENT-FCOLOR: #e2e8f0;
+    --BOX-SHADOW: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    --ACTIVE-CLASS-BGCOLOR: #6c7ae0;
+    --TITLE-CONTAINER-BGCOLOR: #1f2937;
+}
+
+.top__heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: var(--PADDING);
+    background: var(--MAIN-HEADING-BG);
+    font-style: italic;
+    color: var(--CLASSROOM-FCOLOR);
+    display: flex;          
+    justify-content: space-between; 
+    align-items: center;    
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 25%;
+    z-index: 10;
+    overflow: visible;
+    height: 100vh;
+    background-color: var(--CONTENT-BGCOLOR);
+}
+
+
+.classroom {
+    font-size: var(--CLASSROOM-FSIZE);
+    display: flex;
+    flex-flow: column nowrap;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--CLASSROOM-FCOLOR);
+    background-color: var(--CLASSROOM-BGCOLOR);
+    border-bottom: 2px solid var(--SIDEBAR-BORDER);
+    box-shadow: var(--BOX-SHADOW);
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: var(--PADDING);
+}
+
+.sidebar, .class-title-container, .classroom {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.classroom-title,
+.classroom-desc {
+    margin-top: 10px;
+}
+
+.student-count {
+    background-color: var(--BGCOLOR);
+    color: var(--STUDENT-COUNT-COLOR);
+    padding: 5px 10px;
+    font-size: var(--STUDENT-COUNT-FSIZE);
+    font-weight: bold;
+}
+
+.classroom,
+.create-btn {
+    text-align: center;
+    padding: var(--PADDING);
+    transition: 0.3s ease-in-out;
+    user-select: none;
+}
+
+.create-btn {
+    position: static;
+    background-color: var(--CREATE-BGCOLOR);
+    width: 100%;
+    border: none;
+    font-size: var(--CLASSROOM-FSIZE);
+    font-weight: 500;
+    color: var(--CLASSROOM-FCOLOR);
+    font-family: "Roboto", "Nunito", sans-serif;
+}
+
+.classroom:hover {
+    background-color: #BFD3FF;
+}
+
+.classroom:hover,
+.create-btn:hover {
+    transform: scale(1.09);
+    border-radius: 20px;
+}
+
+.create-btn:hover {
+    background: var(--MAIN-HEADING-BG);
+}
+
+.classroom:active,
+.create-btn:active {
+    transform: scale(0.95);
+}
+
+.classroom.active {
+    background-color: var(--ACTIVE-CLASS-BGCOLOR);
+    font-weight: bold;
+    transform: scale(1.05);
+    border-radius: 20px;
+}
+
+.main-container {
+    flex-grow: 1;
+    padding: var(--PADDING);
+    color: var(--CONTENT-FCOLOR);
+    background-color: var(--CONTENT-BGCOLOR);
+    position: relative;
+}
+ 
+.classroom-title-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: var(--TITLE-CONTAINER-BGCOLOR);
+    padding: var(--PADDING);
+    user-select: none;
+}
